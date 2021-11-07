@@ -19,8 +19,7 @@ app.post("/quiz", (req, res) => {
   if (
     !req.body.question ||
     !req.body.correct_answer ||
-    !req.body.solution ||
-    !req.body.options
+    !req.body.solution 
   ) {
     res.status(400).send("invalid data");
   } else {
@@ -28,7 +27,6 @@ app.post("/quiz", (req, res) => {
       question: req.body.question,
       correct_answer: req.body.correct_answer,
       solution: req.body.solution,
-      options: req.body.options,
     });
     res.status(200).send("question Added");
   }
